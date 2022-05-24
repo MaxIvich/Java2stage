@@ -1,5 +1,9 @@
 package ru.gb.ivlev2ch;
 
 public class Wall {
-    int height ;
+    private int height ;
+
+    public int getHeight() {
+        return height;
+    }
 }

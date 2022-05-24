@@ -8,12 +8,12 @@ public class Robot implements  Action{
     }
 
     @Override
-    public int run() {
+    public int run(int i) {
         return 0;
     }
 
     @Override
-    public int jump() {
+    public int jump(int j) {
         return 0;
     }
 }
