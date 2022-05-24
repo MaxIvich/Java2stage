@@ -1,7 +1,7 @@
 package ru.gb.ivlev2ch;
 
-public class Man implements Action{
-    String name;
+public class Cat implements Action{
+    private String name;
     public String getName() {
         return name;
     }
