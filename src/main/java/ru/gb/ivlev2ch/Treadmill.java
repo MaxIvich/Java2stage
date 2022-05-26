@@ -9,6 +9,7 @@ public class Treadmill implements Obstacles {
     public int getLength() {
         return length;
 
+
     }
     public boolean check(Action a){
         if(a.getRunlimit()>=this.length) {
@@ -21,6 +22,7 @@ public class Treadmill implements Obstacles {
     public int Action(Action a){
         a.run(this.getLength());
         return this.getLength();
+
 
     }
 

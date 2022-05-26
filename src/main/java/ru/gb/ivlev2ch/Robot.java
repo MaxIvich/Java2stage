@@ -27,14 +27,19 @@ public class Robot implements Action {
     }
 
     @Override
+
     public int getRunlimit() {
         return runlimit;
     }
 
     @Override
     public int getJumplimit() {
+
+
         return jumplimit;
     }
+
+
 
 
 }
