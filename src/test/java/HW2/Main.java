@@ -6,9 +6,9 @@ public class Main {
 
     public static void main(String[] args)  {
 
-         String[][] str = new String[4][4];
+         String[][] str = new String[5][4];
         for (int i = 0; i < str.length; i++) {
-            for (int j = 0; j < str.length; j++) {
+            for (int j = 0; j < str[0].length; j++) {
                 str[i][j]= String.valueOf(i+j);
             }
         }
@@ -21,7 +21,7 @@ public class Main {
         }
     }
     public static void m(String[][] t)throws MyArraySizeException,MyArrayDataException {
-        if (t.length>4) {
+        if (t.length > 4 || t[0].length > 4) {
         throw new MyArraySizeException(t);
              }
         else {
@@ -42,5 +42,6 @@ public class Main {
         public static boolean check(String Q){
             return Q.matches("-?\\d+(\\.\\d+)?");
         }
+
 
 }
