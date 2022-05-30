@@ -14,8 +14,6 @@ public class Wall implements Obstacles {
 
     public boolean check(Action a) {
         if (a.getJumplimit() >= this.height) {
-
-
             return true;
         } else return false;
 

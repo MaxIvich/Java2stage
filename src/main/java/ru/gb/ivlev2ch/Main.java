@@ -2,10 +2,6 @@ package ru.gb.ivlev2ch;
 
 public class Main {
     public static void main(String[] args) {
-
-
-
-
         Action[] participants = new Action[3];
         participants[0]= new Man("Иван",500,5);
         participants[1]= new Robot("С3PO",1000,100);
