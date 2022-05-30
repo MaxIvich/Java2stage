@@ -12,15 +12,15 @@ public class Main {
                 str[i][j]= String.valueOf(i+j);
             }
         }
-        str[2][2]= "1";
+        str[2][2]= "q";
         Arrays.stream(str).map(Arrays::toString).forEach(System.out::println);
         try {
-            m(str);
+           m(str);
         } catch (MyArraySizeException | MyArrayDataException e) {
             e.printStackTrace();
         }
     }
-    public static void m(String[][] t)throws MyArraySizeException,MyArrayDataException {
+    public static   void m(String[][] t)throws MyArraySizeException,MyArrayDataException {
         if (t.length > 4 || t[0].length > 4) {
         throw new MyArraySizeException(t);
              }
@@ -33,7 +33,6 @@ public class Main {
                         b = a + b;
                     }
                     else throw new MyArrayDataException(i,j);
-
                 }
             }
             System.out.println("Сумма чисел в массиве = "+ b);
