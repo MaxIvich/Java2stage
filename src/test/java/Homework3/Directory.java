@@ -22,7 +22,7 @@ public class Directory {
 
 
         List<PhoneBook> Skw = directory.stream().filter((PhoneBook) -> PhoneBook.getName().equals("Скайвокер")).collect(Collectors.toList());
-         Skw.forEach(S -> System.out.println(S));
+         Skw.forEach(System.out::println);
 
     }
 }
