@@ -1,5 +1,7 @@
 package Homework3;
 
+import java.util.HashSet;
+
 public class PhoneBook {
     String name;
     String phoneNum;
@@ -21,4 +23,5 @@ public class PhoneBook {
 
 
     }
+
 }

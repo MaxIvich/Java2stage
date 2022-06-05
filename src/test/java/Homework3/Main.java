@@ -40,6 +40,10 @@ public class Main {
 
 
 
+
+
+
+
       //  var freq= Arrays.stream(str)
       //          .collect(Collectors.groupingBy(x -> x, Collectors.counting()));
       //  System.out.println(freq);
