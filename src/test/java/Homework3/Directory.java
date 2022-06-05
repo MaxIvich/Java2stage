@@ -26,11 +26,6 @@ public class Directory {
         System.out.println(dir.directory);
         dir.get(dir.directory,"Скайвокер");
 
-
-
-
-
-
     }
 
 
