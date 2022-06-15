@@ -52,9 +52,6 @@ public class EchoClient {
                         break;
                     }
                     System.out.println("Сообщение от сервера:  " + message);
-
-
-
                 }
             } catch (IOException e ) {
                 e.printStackTrace();

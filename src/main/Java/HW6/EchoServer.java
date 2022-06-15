@@ -19,8 +19,6 @@ public class EchoServer {
     }
     public void go () {
            start();
-
-
     }
 
     public void start(){
@@ -31,6 +29,18 @@ public class EchoServer {
 
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
+            new Thread(()->{
+                while (true) {
+                    Scanner scanner = new Scanner(System.in);
+                    String s = scanner.nextLine();
+                    try {
+                        out.writeUTF(s);
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
             while (!socket.isOutputShutdown()) {
                 String message = in.readUTF();
                 if (EXIT_MESSAGE.equals(message)) {
@@ -38,22 +48,7 @@ public class EchoServer {
                     closeConnection();
                     break;
                 }
-
                 System.out.println("Сообщение от пользователя:  " + message);
-
-                new Thread(()->{
-                    while (true) {
-                        Scanner scanner = new Scanner(System.in);
-                        String s = scanner.nextLine();
-                        try {
-                            out.writeUTF(s);
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }).start();
-
 
             }
         } catch (IOException e) {
