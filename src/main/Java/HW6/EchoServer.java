@@ -36,7 +36,6 @@ public class EchoServer {
                 if (EXIT_MESSAGE.equals(message)) {
                     out.writeUTF(EXIT_MESSAGE);
                     closeConnection();
-
                     break;
                 }
 
@@ -62,9 +61,6 @@ public class EchoServer {
         }
 
     }
-
-
-
     private void closeConnection() {
         if (in != null) {
             try {

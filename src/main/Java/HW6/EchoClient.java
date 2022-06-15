@@ -22,7 +22,7 @@ public class EchoClient {
         try {
             openConnection();
             Scanner scanner = new Scanner(System.in);
-            while (!socket.isOutputShutdown()){
+            while (true){
                 sendMessage(scanner.nextLine());
             }
         } catch (IOException | InterruptedException e) {
