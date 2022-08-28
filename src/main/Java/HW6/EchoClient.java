@@ -18,11 +18,10 @@ public class EchoClient {
     }
 
     private void start() {
-
         try {
             openConnection();
             Scanner scanner = new Scanner(System.in);
-            while (true){
+            while (!socket.isOutputShutdown()){
                 sendMessage(scanner.nextLine());
             }
         } catch (IOException | InterruptedException e) {
@@ -32,13 +31,10 @@ public class EchoClient {
     private void sendMessage(String message) throws InterruptedException {
 
         try {
-
             out.writeUTF(message);
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
     private void openConnection() throws IOException {
         socket=new Socket("127.0.0.1",9198);
@@ -58,15 +54,10 @@ public class EchoClient {
             } finally {
                 closeConnection();
             }
-
         }).start();
-
-
     }
-
     public boolean finish(String s){
         return s.equalsIgnoreCase(EXIT_MESSAGE);
-
     }
     private void closeConnection() {
         if (in != null) {

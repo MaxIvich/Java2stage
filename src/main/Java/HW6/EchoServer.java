@@ -35,7 +35,6 @@ public class EchoServer {
                     String s = scanner.nextLine();
                     try {
                         out.writeUTF(s);
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -46,6 +45,7 @@ public class EchoServer {
                 if (EXIT_MESSAGE.equals(message)) {
                     out.writeUTF(EXIT_MESSAGE);
                     closeConnection();
+
                     break;
                 }
                 System.out.println("Сообщение от пользователя:  " + message);
@@ -54,6 +54,11 @@ public class EchoServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+    public boolean checkExit() throws IOException {
+        String message = in.readUTF();
+        return EXIT_MESSAGE.equals(message);
 
     }
     private void closeConnection() {
